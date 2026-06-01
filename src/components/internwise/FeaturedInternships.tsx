@@ -12,7 +12,7 @@ export function FeaturedInternships() {
           {FEATURED_INTERNSHIPS.map((job) => (
             <article
               key={job.title}
-              className="flex flex-col rounded-2xl border border-border bg-card p-5 shadow-sm transition-shadow hover:shadow-card"
+              className="flex h-full flex-col rounded-2xl border border-border bg-card p-5 shadow-sm transition-shadow hover:shadow-card"
             >
               <div className="flex items-start justify-between">
                 <div className="grid h-11 w-11 place-items-center rounded-xl bg-secondary text-sm font-extrabold text-primary">
@@ -26,25 +26,27 @@ export function FeaturedInternships() {
                   <Bookmark className="h-5 w-5" aria-hidden="true" />
                 </button>
               </div>
-              <h3 className="mt-3 text-sm font-bold leading-snug text-foreground">{job.title}</h3>
-              <p className="mt-1 text-sm font-semibold text-primary">{job.company}</p>
-              <p className="mt-1 flex items-center gap-1 text-xs text-muted-foreground">
-                <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
-                {job.location}
-              </p>
-              <div className="mt-3 space-y-1 text-xs text-foreground">
-                <p className="flex items-center gap-1">
-                  <Briefcase className="h-3.5 w-3.5 text-muted-foreground" aria-hidden="true" />
-                  <span className="font-semibold">Type:</span> {job.type}
+              <div className="mt-3 flex min-h-[14rem] flex-col">
+                <h3 className="text-sm font-bold leading-snug text-foreground">{job.title}</h3>
+                <p className="mt-2 text-sm font-semibold leading-snug text-primary">{job.company}</p>
+                <p className="mt-2 flex items-start gap-1 text-xs leading-snug text-muted-foreground">
+                  <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+                  <span>{job.location}</span>
                 </p>
-                <p className="flex items-center gap-1">
-                  <Clock className="h-3.5 w-3.5 text-muted-foreground" aria-hidden="true" />
-                  <span className="font-semibold">Duration:</span> {job.duration}
-                </p>
+                <div className="mt-4 space-y-2 text-xs text-foreground">
+                  <p className="flex items-center gap-1">
+                    <Briefcase className="h-3.5 w-3.5 shrink-0 text-muted-foreground" aria-hidden="true" />
+                    <span className="font-semibold">Type:</span> {job.type}
+                  </p>
+                  <p className="flex items-center gap-1">
+                    <Clock className="h-3.5 w-3.5 shrink-0 text-muted-foreground" aria-hidden="true" />
+                    <span className="font-semibold">Duration:</span> {job.duration}
+                  </p>
+                </div>
               </div>
               <a
                 href={job.href}
-                className="mt-4 rounded-lg border border-primary px-3 py-2 text-center text-xs font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+                className="mt-auto rounded-lg border border-primary px-3 py-2 text-center text-xs font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
               >
                 View Details
               </a>

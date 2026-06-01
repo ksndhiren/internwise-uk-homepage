@@ -11,17 +11,19 @@ export function FeaturedEmployers() {
           {FEATURED_EMPLOYERS.map((employer) => (
             <article
               key={employer.name}
-              className="flex flex-col rounded-2xl border border-border bg-card p-5 text-center shadow-sm transition-shadow hover:shadow-card"
+              className="flex h-full flex-col rounded-2xl border border-border bg-card p-5 text-center shadow-sm transition-shadow hover:shadow-card"
             >
               <div className="mx-auto grid h-14 w-14 place-items-center rounded-xl bg-secondary text-lg font-extrabold text-primary">
                 {employer.name.charAt(0)}
               </div>
-              <h3 className="mt-3 text-sm font-bold text-foreground">{employer.name}</h3>
-              <p className="text-xs text-muted-foreground">{employer.industry}</p>
-              <p className="mt-2 text-xs font-semibold text-foreground">{employer.activeInternships} Active Jobs</p>
+              <div className="mt-3 flex min-h-[9.5rem] flex-col">
+                <h3 className="text-sm font-bold leading-snug text-foreground">{employer.name}</h3>
+                <p className="mt-1 text-xs leading-snug text-muted-foreground">{employer.industry}</p>
+                <p className="mt-3 text-xs font-semibold text-foreground">{employer.activeInternships} Active Jobs</p>
+              </div>
               <a
                 href={employer.href}
-                className="mt-4 rounded-lg border border-primary px-3 py-2 text-xs font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+                className="mt-auto rounded-lg border border-primary px-3 py-2 text-xs font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
               >
                 View Profile
               </a>
