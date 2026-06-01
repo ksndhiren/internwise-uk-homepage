@@ -14,13 +14,13 @@ import { Footer } from "@/components/internwise/Footer";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Internwise — Find Internships in the UK for Students & Graduates" },
+      { title: "Internships & Graduate Opportunities in the UK | Internwise" },
       {
         name: "description",
         content:
           "Internwise is the UK's internship marketplace. Search internships at top companies, build experience, and hire pre-screened intern talent.",
       },
-      { property: "og:title", content: "Internwise — UK Internship Marketplace" },
+      { property: "og:title", content: "Internships & Graduate Opportunities in the UK | Internwise" },
       {
         property: "og:description",
         content:

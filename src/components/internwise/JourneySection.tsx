@@ -9,6 +9,7 @@ type Step = { title: string; description: string };
 function JourneyCard({
   surface,
   accent,
+  lineColor,
   title,
   subtitle,
   steps,
@@ -19,6 +20,7 @@ function JourneyCard({
 }: {
   surface: string;
   accent: string;
+  lineColor: string;
   title: string;
   subtitle: string;
   steps: Step[];
@@ -31,12 +33,16 @@ function JourneyCard({
     <div className={`rounded-3xl p-7 lg:p-9 ${surface}`}>
       <h3 className={`text-center text-2xl font-extrabold ${accent}`}>{title}</h3>
       <p className="mt-1 text-center text-sm text-muted-foreground">{subtitle}</p>
-      <ol className="mt-8 grid grid-cols-2 gap-6 sm:grid-cols-4">
+      <ol className="relative mt-8 grid grid-cols-2 gap-6 sm:grid-cols-4">
+        <span
+          aria-hidden="true"
+          className={`pointer-events-none absolute left-[12.5%] right-[12.5%] top-6 hidden h-px sm:block ${lineColor}`}
+        />
         {steps.map((step, i) => {
           const Icon = icons[i];
           return (
-            <li key={step.title} className="flex flex-col items-center text-center">
-              <span className="relative grid h-12 w-12 place-items-center rounded-full bg-card shadow-sm">
+            <li key={step.title} className="relative flex flex-col items-center text-center">
+              <span className="relative z-10 grid h-12 w-12 place-items-center rounded-full bg-card shadow-sm">
                 <Icon className={`h-5 w-5 ${accent}`} aria-hidden="true" />
                 <span className={`absolute -right-1 -top-1 grid h-5 w-5 place-items-center rounded-full text-[10px] font-bold ${ctaClass}`}>
                   {i + 1}
@@ -68,6 +74,7 @@ export function JourneySection() {
         <JourneyCard
           surface="bg-sky"
           accent="text-primary"
+          lineColor="bg-primary/25"
           title="Your Journey as a Candidate"
           subtitle="We help you every step of the way"
           steps={CANDIDATE_STEPS}
@@ -79,6 +86,7 @@ export function JourneySection() {
         <JourneyCard
           surface="bg-warm"
           accent="text-accent"
+          lineColor="bg-accent/25"
           title="Your Journey as an Employer"
           subtitle="Find, hire and manage the best intern talent"
           steps={EMPLOYER_STEPS}

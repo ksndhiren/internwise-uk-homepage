@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
+    "build:pages": "vite build && mkdir -p dist/client/assets && cp dist/server/server.js dist/client/_worker.js && cp dist/server/server.js dist/client/server.js && cp dist/server/assets/* dist/client/assets/",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
     "lint": "eslint .",

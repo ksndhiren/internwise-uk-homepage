@@ -2,17 +2,6 @@ import { Calendar, Clock } from "lucide-react";
 import { ARTICLES } from "@/data/internwise";
 import { SectionHeading } from "./SectionHeading";
 
-/**
- * Latest career advice cards — rendered from ARTICLES.
- * DEVELOPER NOTE: replace the gradient placeholder with article.image once available.
- */
-const GRADIENTS = [
-  "from-primary/20 to-primary/5",
-  "from-accent/20 to-accent/5",
-  "from-primary/15 to-accent/10",
-  "from-accent/15 to-primary/10",
-];
-
 export function CareerAdvice() {
   return (
     <section className="bg-secondary/40 py-14 lg:py-16">
@@ -25,7 +14,7 @@ export function CareerAdvice() {
               className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-shadow hover:shadow-card"
             >
               <a href={article.href} className="block">
-                <div className={`relative aspect-[16/10] bg-gradient-to-br ${GRADIENTS[i % GRADIENTS.length]}`}>
+                <div className="relative aspect-[16/10] bg-gradient-to-br from-primary/10 via-card to-accent/10">
                   <span className="absolute left-3 top-3 rounded-md bg-card/90 px-2 py-1 text-[10px] font-bold uppercase tracking-wide text-primary">
                     {article.category}
                   </span>

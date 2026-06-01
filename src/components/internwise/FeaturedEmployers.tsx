@@ -18,9 +18,7 @@ export function FeaturedEmployers() {
               </div>
               <h3 className="mt-3 text-sm font-bold text-foreground">{employer.name}</h3>
               <p className="text-xs text-muted-foreground">{employer.industry}</p>
-              <p className="mt-2 text-xs font-semibold text-foreground">
-                {employer.activeInternships}+ Active Internships
-              </p>
+              <p className="mt-2 text-xs font-semibold text-foreground">{employer.activeInternships} Active Jobs</p>
               <a
                 href={employer.href}
                 className="mt-4 rounded-lg border border-primary px-3 py-2 text-xs font-bold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"

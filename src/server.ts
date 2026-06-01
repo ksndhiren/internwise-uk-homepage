@@ -7,6 +7,12 @@ type ServerEntry = {
   fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;
 };
 
+type PagesEnv = {
+  ASSETS?: {
+    fetch: (request: Request) => Promise<Response> | Response;
+  };
+};
+
 let serverEntryPromise: Promise<ServerEntry> | undefined;
 
 async function getServerEntry(): Promise<ServerEntry> {
@@ -38,10 +44,24 @@ async function normalizeCatastrophicSsrResponse(response: Response): Promise<Res
 }
 
 export default {
-  async fetch(request: Request, env: unknown, ctx: unknown) {
+  async fetch(request: Request, env: PagesEnv, ctx: unknown) {
+    const url = new URL(request.url);
+    const isStaticAssetRequest =
+      url.pathname.startsWith("/assets/") ||
+      url.pathname === "/favicon.ico" ||
+      url.pathname === "/robots.txt" ||
+      /\.[a-z0-9]+$/i.test(url.pathname);
+
+    if (isStaticAssetRequest && env.ASSETS) {
+      return env.ASSETS.fetch(request);
+    }
+
     try {
       const handler = await getServerEntry();
       const response = await handler.fetch(request, env, ctx);
+      if (response.status === 404 && env.ASSETS) {
+        return env.ASSETS.fetch(request);
+      }
       return await normalizeCatastrophicSsrResponse(response);
     } catch (error) {
       console.error(error);

@@ -1,3 +1,10 @@
+import nikeLogo from "@/assets/live-crops/logo-nike.png";
+import cancerResearchUkLogo from "@/assets/live-crops/logo-cancer-research-uk.png";
+import oracleLogo from "@/assets/live-crops/logo-oracle.png";
+import youGovLogo from "@/assets/live-crops/logo-yougov.png";
+import o2Logo from "@/assets/live-crops/logo-o2.png";
+import penguinLogo from "@/assets/live-crops/logo-penguin.png";
+
 /**
  * Internwise homepage mock data.
  *
@@ -21,20 +28,53 @@ export const NAV_LINKS: NavLink[] = [
 /** Hero search tabs */
 export const SEARCH_TABS = ["Search Internships", "Browse by Location", "Browse by Sector"] as const;
 
-/** Trusted employer logos (text-based placeholders for the preview) */
-export type BrandLogo = { name: string; color: string };
+/** Trusted employer logos from the live homepage */
+export type BrandLogo = {
+  name: string;
+  src: string;
+  alt: string;
+  widthClass?: string;
+};
 export const TRUSTED_LOGOS: BrandLogo[] = [
-  { name: "Nike", color: "oklch(0.6 0.2 30)" },
-  { name: "Cancer Research UK", color: "oklch(0.55 0.18 320)" },
-  { name: "Oracle", color: "oklch(0.55 0.2 25)" },
-  { name: "YouGov", color: "oklch(0.55 0.18 25)" },
-  { name: "O2", color: "oklch(0.55 0.15 230)" },
-  { name: "Penguin", color: "oklch(0.4 0.05 264)" },
-  { name: "Deloitte", color: "oklch(0.5 0.12 150)" },
-  { name: "Vodafone", color: "oklch(0.6 0.2 25)" },
+  {
+    name: "Nike",
+    src: nikeLogo,
+    alt: "Nike logo",
+    widthClass: "w-20",
+  },
+  {
+    name: "Cancer Research UK",
+    src: cancerResearchUkLogo,
+    alt: "Cancer Research UK logo",
+    widthClass: "w-24",
+  },
+  {
+    name: "Oracle",
+    src: oracleLogo,
+    alt: "Oracle logo",
+    widthClass: "w-24",
+  },
+  {
+    name: "YouGov",
+    src: youGovLogo,
+    alt: "YouGov logo",
+    widthClass: "w-24",
+  },
+  {
+    name: "O2",
+    src: o2Logo,
+    alt: "O2 logo",
+    widthClass: "w-16",
+  },
+  {
+    name: "Penguin",
+    src: penguinLogo,
+    alt: "Penguin Books logo",
+    widthClass: "w-16",
+  },
 ];
 
-/** Featured employers — replace with /api/employers/featured */
+/** Featured employers from the live homepage */
 export type Employer = {
   name: string;
   industry: string;
@@ -42,15 +82,45 @@ export type Employer = {
   href: string;
 };
 export const FEATURED_EMPLOYERS: Employer[] = [
-  { name: "J.P. Morgan", industry: "Finance", activeInternships: 250, href: "/employers/jpmorgan" },
-  { name: "Microsoft", industry: "Technology", activeInternships: 180, href: "/employers/microsoft" },
-  { name: "Deloitte", industry: "Professional Services", activeInternships: 120, href: "/employers/deloitte" },
-  { name: "PwC", industry: "Professional Services", activeInternships: 95, href: "/employers/pwc" },
-  { name: "Sky", industry: "Media & Entertainment", activeInternships: 60, href: "/employers/sky" },
-  { name: "KPMG", industry: "Professional Services", activeInternships: 55, href: "/employers/kpmg" },
+  {
+    name: "Carlotta London Ltd",
+    industry: "Fashion & Accessories",
+    activeInternships: 0,
+    href: "https://www.internwise.co.uk/CarlottaLondon",
+  },
+  {
+    name: "Travel Online Group Limited",
+    industry: "Financial Services / Banking",
+    activeInternships: 2,
+    href: "https://www.internwise.co.uk/CurrencyOnlineGroup",
+  },
+  {
+    name: "JBROWN Global Limited",
+    industry: "Property Management / Real Estate",
+    activeInternships: 2,
+    href: "https://www.internwise.co.uk/jbrowninternational",
+  },
+  {
+    name: "JAG-UFS (International) Limited",
+    industry: "Freight / Logistics / Procurement",
+    activeInternships: 1,
+    href: "https://www.internwise.co.uk/JAGUFS",
+  },
+  {
+    name: "London Property Staging Ltd",
+    industry: "Property Management / Real Estate",
+    activeInternships: 1,
+    href: "https://www.internwise.co.uk/SonjaLPS",
+  },
+  {
+    name: "Hephaestus Technologies Ltd",
+    industry: "Aerospace / Engineering",
+    activeInternships: 6,
+    href: "https://www.internwise.co.uk/HEPHAESTUSTECHNOLOGIESLTD",
+  },
 ];
 
-/** Featured internships — replace with /api/internships/featured */
+/** Featured internships from the live homepage */
 export type Internship = {
   title: string;
   company: string;
@@ -61,36 +131,36 @@ export type Internship = {
 };
 export const FEATURED_INTERNSHIPS: Internship[] = [
   {
-    title: "Business & Leisure Travel Consultant Internship",
-    company: "M3 Private Clients",
+    title: "Social Media & Marketing Executive",
+    company: "JAG-UFS (INTERNATIONAL) LIMITED",
+    location: "Feltham / Camberley, South East England",
+    type: "Part-time/Full-time",
+    duration: "7 - 12 months",
+    href: "https://www.internwise.co.uk/job/35319/social-media-marketing-executive",
+  },
+  {
+    title: "Social Media and Content Intern - Home Staging",
+    company: "LONDON PROPERTY STAGING LTD",
     location: "London, Greater London",
-    type: "Full time",
-    duration: "12 months",
-    href: "/job-search/business-leisure-travel-consultant",
-  },
-  {
-    title: "Graphics Designer",
-    company: "MADE.inc",
-    location: "Greater London",
     type: "Part time",
-    duration: "3 months",
-    href: "/job-search/graphics-designer",
+    duration: "1 - 3 months",
+    href: "https://www.internwise.co.uk/job/35321/social-media-and-content-intern-home-staging",
   },
   {
-    title: "Investment & Corporate Finance Intern",
-    company: "Aztec Meridian",
-    location: "Central London",
-    type: "Full time",
-    duration: "3 months",
-    href: "/job-search/investment-corporate-finance",
+    title: "Real Estate Surveying Internship",
+    company: "JBROWN GLOBAL LIMITED",
+    location: "London, Central London",
+    type: "Part-time/Full-time",
+    duration: "7 - 12 months",
+    href: "https://www.internwise.co.uk/job/35270/real-estate-surveying-internship",
   },
   {
-    title: "Marketing & Social Media Intern",
-    company: "Purple Patch",
-    location: "Remote",
+    title: "Brand Design Internship (Part-Time)",
+    company: "JBROWN GLOBAL LIMITED",
+    location: "London, Central London",
     type: "Part time",
-    duration: "6 months",
-    href: "/job-search/marketing-social-media",
+    duration: "1 - 3 months",
+    href: "https://www.internwise.co.uk/job/35281/brand-design-internship-part-time",
   },
 ];
 
@@ -105,6 +175,9 @@ export const SECTORS: { label: string; href: string }[] = [
   { label: "Engineering Jobs", href: "/job-search?sector=engineering" },
   { label: "HR & Recruitment", href: "/job-search?sector=hr" },
   { label: "IT & Software", href: "/job-search?sector=it" },
+  { label: "Education & Teaching", href: "/job-search?sector=education" },
+  { label: "Marketing / PR", href: "/job-search?sector=marketing" },
+  { label: "Sales Jobs", href: "/job-search?sector=sales" },
 ];
 
 /** Browse by location — replace with /api/locations */

@@ -1,0 +1,11 @@
+<svg width="240" height="72" viewBox="0 0 240 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="240" height="72" rx="16" fill="white"/>
+  <circle cx="38" cy="26" r="4" fill="#673AB7"/>
+  <circle cx="46" cy="20" r="3.5" fill="#EC407A"/>
+  <circle cx="54" cy="25" r="3" fill="#42A5F5"/>
+  <circle cx="42" cy="35" r="3.5" fill="#AB47BC"/>
+  <circle cx="52" cy="34" r="4" fill="#7E57C2"/>
+  <circle cx="60" cy="29" r="2.5" fill="#26C6DA"/>
+  <text x="78" y="30" fill="#374151" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">Cancer</text>
+  <text x="78" y="47" fill="#6B21A8" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">Research UK</text>
+</svg>

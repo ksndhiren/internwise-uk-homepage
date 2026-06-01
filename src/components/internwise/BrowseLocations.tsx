@@ -23,12 +23,6 @@ export function BrowseLocations() {
           </a>
         ))}
       </div>
-      <a
-        href="/job-search"
-        className="mt-4 inline-block rounded-lg border border-border px-4 py-2 text-sm font-bold text-foreground transition-colors hover:border-primary hover:text-primary"
-      >
-        View All Locations
-      </a>
     </div>
   );
 }

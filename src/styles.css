@@ -181,3 +181,35 @@
     font-family: var(--font-display);
   }
 }
+
+.trusted-marquee-shell {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, white 8%, white 92%, transparent);
+}
+
+.trusted-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 1.25rem;
+  animation: trusted-marquee 24s linear infinite;
+}
+
+.trusted-marquee-track:hover {
+  animation-play-state: paused;
+}
+
+.hero-dots {
+  background-image: radial-gradient(circle, color-mix(in oklab, var(--color-primary) 72%, white) 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+  opacity: 0.75;
+}
+
+@keyframes trusted-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 0.625rem));
+  }
+}

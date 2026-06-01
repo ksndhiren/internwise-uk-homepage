@@ -77,14 +77,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Internships & Graduate Opportunities in the UK | Internwise" },
+      {
+        name: "description",
+        content:
+          "Search internships, student placements, and graduate opportunities in London and across the UK.",
+      },
+      { name: "author", content: "Internwise" },
+      { property: "og:title", content: "Internships & Graduate Opportunities in the UK | Internwise" },
+      {
+        property: "og:description",
+        content:
+          "Search internships, student placements, and graduate opportunities in London and across the UK.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
