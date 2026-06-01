@@ -1,29 +1,53 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Header } from "@/components/internwise/Header";
+import { HeroSection } from "@/components/internwise/HeroSection";
+import { TrustedEmployers } from "@/components/internwise/TrustedEmployers";
+import { FeaturedEmployers } from "@/components/internwise/FeaturedEmployers";
+import { FeaturedInternships } from "@/components/internwise/FeaturedInternships";
+import { BrowseSection } from "@/components/internwise/BrowseSection";
+import { JourneySection } from "@/components/internwise/JourneySection";
+import { StatsBand } from "@/components/internwise/StatsBand";
+import { CareerAdvice } from "@/components/internwise/CareerAdvice";
+import { FinalCTA } from "@/components/internwise/FinalCTA";
+import { Footer } from "@/components/internwise/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "Internwise — Find Internships in the UK for Students & Graduates" },
+      {
+        name: "description",
+        content:
+          "Internwise is the UK's internship marketplace. Search internships at top companies, build experience, and hire pre-screened intern talent.",
+      },
+      { property: "og:title", content: "Internwise — UK Internship Marketplace" },
+      {
+        property: "og:description",
+        content:
+          "Search internship opportunities at top UK companies, build experience and shape your future with Internwise.",
+      },
+      { property: "og:type", content: "website" },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main>
+        <HeroSection />
+        <TrustedEmployers />
+        <FeaturedEmployers />
+        <FeaturedInternships />
+        <BrowseSection />
+        <JourneySection />
+        <StatsBand />
+        <CareerAdvice />
+        <FinalCTA />
+      </main>
+      <Footer />
     </div>
   );
 }
