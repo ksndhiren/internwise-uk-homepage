@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Search, MapPin, Briefcase, Building2, ArrowRight, Users, UserRound } from "lucide-react";
+import { Search, MapPin, Building2, ArrowRight, Users, UserRound } from "lucide-react";
 import { SEARCH_TABS, HERO_STATS } from "@/data/internwise";
 import heroImage from "@/assets/hero-students.jpg";
 
