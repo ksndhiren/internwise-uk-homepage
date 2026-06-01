@@ -12,13 +12,13 @@ export function TrustedEmployers() {
             {rollingLogos.map((logo, index) => (
               <div
                 key={`${logo.name}-${index}`}
-                className="flex h-20 min-w-44 items-center justify-center rounded-2xl border border-border/70 bg-card px-6 shadow-sm"
+                className="flex h-24 min-w-48 items-center justify-center rounded-2xl border border-border/70 bg-card px-5 shadow-sm"
               >
                 <img
                   src={logo.src}
                   alt={logo.alt}
                   loading="lazy"
-                  className={`h-12 object-contain transition duration-300 ${logo.widthClass ?? "w-28"}`}
+                  className={`mx-auto h-16 object-contain object-center transition duration-300 ${logo.widthClass ?? "w-40"}`}
                 />
               </div>
             ))}

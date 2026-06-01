@@ -40,37 +40,37 @@ export const TRUSTED_LOGOS: BrandLogo[] = [
     name: "Nike",
     src: nikeLogo,
     alt: "Nike logo",
-    widthClass: "w-20",
+    widthClass: "w-28",
   },
   {
     name: "Cancer Research UK",
     src: cancerResearchUkLogo,
     alt: "Cancer Research UK logo",
-    widthClass: "w-24",
+    widthClass: "w-36",
   },
   {
     name: "Oracle",
     src: oracleLogo,
     alt: "Oracle logo",
-    widthClass: "w-24",
+    widthClass: "w-36",
   },
   {
     name: "YouGov",
     src: youGovLogo,
     alt: "YouGov logo",
-    widthClass: "w-24",
+    widthClass: "w-36",
   },
   {
     name: "O2",
     src: o2Logo,
     alt: "O2 logo",
-    widthClass: "w-16",
+    widthClass: "w-24",
   },
   {
     name: "Penguin",
     src: penguinLogo,
     alt: "Penguin Books logo",
-    widthClass: "w-16",
+    widthClass: "w-24",
   },
 ];
 
