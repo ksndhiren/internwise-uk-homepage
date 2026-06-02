@@ -174,10 +174,6 @@ export const SECTORS: { label: string; href: string }[] = [
   { label: "Design / Creative", href: "/job-search?sector=design" },
   { label: "Engineering Jobs", href: "/job-search?sector=engineering" },
   { label: "HR & Recruitment", href: "/job-search?sector=hr" },
-  { label: "IT & Software", href: "/job-search?sector=it" },
-  { label: "Education & Teaching", href: "/job-search?sector=education" },
-  { label: "Marketing / PR", href: "/job-search?sector=marketing" },
-  { label: "Sales Jobs", href: "/job-search?sector=sales" },
 ];
 
 /** Browse by location — replace with /api/locations */
@@ -190,10 +186,6 @@ export const LOCATIONS: { label: string; href: string }[] = [
   { label: "Jobs in Glasgow", href: "/job-search?location=glasgow" },
   { label: "Jobs in Edinburgh", href: "/job-search?location=edinburgh" },
   { label: "Jobs in Liverpool", href: "/job-search?location=liverpool" },
-  { label: "Jobs in Sheffield", href: "/job-search?location=sheffield" },
-  { label: "Jobs in Nottingham", href: "/job-search?location=nottingham" },
-  { label: "Jobs in Brighton", href: "/job-search?location=brighton" },
-  { label: "Jobs in Oxford", href: "/job-search?location=oxford" },
 ];
 
 /** Candidate journey steps */
